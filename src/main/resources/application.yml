@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: simple
+      properties:
+        spring.json.type.mapping: 'model:com.muravev.bigdataconsumer.data.SensorData'
+  data:
+    mongodb:
+      authentication-database: admin
+      username: app
+      password: password
+      host: localhost
+      port: 27017
+      database: test
